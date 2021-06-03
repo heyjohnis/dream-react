@@ -12,6 +12,8 @@
 # production
 **/build
 
+# Sample Code
+**/sample
 
 # misc
 .DS_Store
