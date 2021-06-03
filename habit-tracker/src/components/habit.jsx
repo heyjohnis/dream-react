@@ -6,15 +6,15 @@ class Habit extends Component {
   };
 
   handleIncreament = () => {
-    this.props.onIncreament(this.props.habit.name);
+    this.props.onIncreament(this.props.habit);
   };
 
   handleDecreament = () => {
-    this.props.onDecreament(this.props.habit.name);
+    this.props.onDecreament(this.props.habit);
   };
 
   handleDelete = () => {
-    this.props.onDelete(this.props.habit.name);
+    this.props.onDelete(this.props.habit);
   };
 
   render() {
