@@ -9,7 +9,7 @@ class Habit extends Component {
   handleDecreament = () => {
     this.props.onDecreament(this.props.habit);
   };
-
+ 
   handleDelete = () => {
     this.props.onDelete(this.props.habit);
   };
