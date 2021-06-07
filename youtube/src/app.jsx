@@ -8,12 +8,16 @@ function App({youtube}) {
   
   const search = query => {
     youtube.searchMovieList(query)
-      .then(console.log);
+      .then( data => {
+        setVideos(data);
+      });
   };
 
   useEffect(() => {
     youtube.movieList()
-      .then(console.log);
+      .then( data => {
+        setVideos(data);
+      })
   }, []);
   return (
     <div className={styles.app}>

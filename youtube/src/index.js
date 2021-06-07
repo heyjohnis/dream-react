@@ -8,7 +8,7 @@ const youtube = new Youtube('abc');
 
 ReactDOM.render(
   <React.StrictMode>
-    <App  youtube={youtube} />
+    <App youtube={youtube} />
   </React.StrictMode>,
   document.getElementById('root')
 );

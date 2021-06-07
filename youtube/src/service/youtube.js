@@ -15,7 +15,7 @@ class Youtube {
     return fetch(this.url, 
       this.requestOptions)
       .then(response => response.json())
-      .then(result => result.item)
+      .then(result => result.items)
       .catch(error => console.log('error', error));
   }
 
