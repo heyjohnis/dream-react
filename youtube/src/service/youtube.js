@@ -11,20 +11,18 @@ class Youtube {
     this.url = `https://www.googleapis.com/youtube/v3/search?key=${this.key}&part=snippet&channelId=${this.channelId}&maxResults=20&order=date`;
   }
 
-  movieList() {
-    return fetch(this.url, 
-      this.requestOptions)
-      .then(response => response.json())
-      .then(result => result.items)
-      .catch(error => console.log('error', error));
+  async movieList() {
+    const response = await fetch(this.url,
+      this.requestOptions);
+    const result_1 = await response.json();
+    return result_1.items;
   }
 
-  searchMovieList(query) {
-    return fetch(`${this.url}&q=${query}`, 
-      this.requestOptions)
-      .then(response => response.json())
-      .then(result => result.items)
-      .catch(error => console.log('error', error));
+  async searchMovieList(query) {
+      const response = await fetch(`${this.url}&q=${query}`,
+        this.requestOptions);
+      const result_1 = await response.json();
+      return result_1.items;
   }
 
 }
