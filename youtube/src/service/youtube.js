@@ -8,7 +8,7 @@ class Youtube {
       redirect: 'follow'
     };
     this.channelId = 'UC2fP4GE9B6O8_T8Lp82fnJQ'; //UC2fP4GE9B6O8_T8Lp82fnJQ 대방, UC0Qzngib6BwuBGoRZpL9YEw 전주
-    this.url = `https://www.googleapis.com/youtube/v3/search?key=AIzaSyDAqhAbNCGbjhFsTq9yMnW0qZBR7Pd1vg0&part=snippet&channelId=${this.channelId}&maxResults=20&order=date`;
+    this.url = `https://www.googleapis.com/youtube/v3/search?key=${this.key}&part=snippet&channelId=${this.channelId}&maxResults=20&order=date`;
   }
 
   movieList() {
