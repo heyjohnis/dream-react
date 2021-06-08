@@ -8,8 +8,11 @@ function App({youtube}) {
   const [videos, setVideos] = useState([]);
   const [selectedVideo, setSelectedVideo] = useState(null);
   
+  const reset = () => {
+    setSelectedVideo(null);
+  }
+
   const selectVideo  = (video) => {
-    console.log(video);
     setSelectedVideo(video); 
   }
 
@@ -17,6 +20,7 @@ function App({youtube}) {
     youtube.searchMovieList(query)
       .then( data => {
         setVideos(data);
+        setSelectedVideo(null);
       });
   };
 
@@ -28,7 +32,7 @@ function App({youtube}) {
   }, []);
   return (
     <div className={styles.app}>
-      <SearchHeader onSearch={search} />
+      <SearchHeader onSearch={search} onReset={reset} />
       <section className={styles.content}>
         {selectedVideo &&  (
           <div className={styles.detail}>

@@ -19,9 +19,13 @@ const SearchHeader = (props) => {
     }
   };
 
+  const onReset = () => {
+    props.onReset();
+  };
+
   return (
     <header className={styles.header}>
-      <h1 className={styles.bi}><img src="/images/tjc-logo.png" alt="Logo" /> TJC TV</h1>
+      <h1 className={styles.bi} onClick={onReset}><img src="/images/tjc-logo.png" alt="Logo" /> TJC TV</h1>
       <div className={styles.search}>
         <input type="text" ref={inputRef} placeholder="검색어를 입력하세요" onKeyPress={onKeyPress} />
         <button onClick={onClick}>검색</button>
