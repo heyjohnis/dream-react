@@ -11,5 +11,4 @@ const Home = (props) => {
         }}>Go to Profile</button>
       </>);
 };
-
 export default Home;
