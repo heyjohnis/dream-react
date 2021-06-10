@@ -12,7 +12,7 @@ function App() {
       <Link to="/profile">Profile</Link>
     </nav>
     <Switch>
-      <Route path={['/', '/home']}>
+      <Route path={['/', '/home']} exact>
         <Home />
       </Route>
       <Route path="/profile">
