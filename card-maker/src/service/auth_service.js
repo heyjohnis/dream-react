@@ -8,6 +8,16 @@ class AuthService {
     console.log("authProvider", authProvider);
     return firebaseApp.auth().signInWithPopup(authProvider);
   }
+
+  logout() {
+    firebase.auth().signOut();
+  }
+
+  onAuthChange(onUserChanged) {
+    firebaseApp.auth().onAuthStateChanged(user => {
+      onUserChanged(user);
+    });
+  }
 }
 
 export default AuthService;
