@@ -1,4 +1,5 @@
 import React from 'react';
+import CardEditForm from '../card_edit_form/card_edit_form';
 import styles from './editor.module.css';
 
 const Editor = ({cards}) => {
@@ -6,7 +7,7 @@ const Editor = ({cards}) => {
     <section className={styles.editor}>
       <h1>Card Maker</h1>
       {
-        cards.map(card => <h1>{card.id}</h1>)
+        cards.map(card => <CardEditForm card={card} />)
       }
     </section>
   );
