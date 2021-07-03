@@ -7,7 +7,7 @@ const CardEditForm = ({card}) => {
   const { id, name, company, theme, title, email, message, fileName, fileURL } = card;
   const onSubmit = () => {};
   return(
-    <form key={id} className={styles.form}>
+    <form className={styles.form}>
       <input className={styles.input} type="text" name="name" value={name} />
       <input className={styles.input} type="text" name="company" value={company} />
       <select name="theme" value={theme}>
