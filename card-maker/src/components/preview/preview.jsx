@@ -7,8 +7,8 @@ const Preview = ({cards}) => {
     <section className={styles.preview}>
       <h1 className={styles.title}>Preview</h1>
       {
-        cards.map(card => (
-           <Card card={card} />
+        Object.keys(cards).map(key => (
+           <Card key={key} card={cards[key]} />
         ))
       }
     </section>
