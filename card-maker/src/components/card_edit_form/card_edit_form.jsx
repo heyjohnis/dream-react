@@ -6,6 +6,7 @@ const CardEditForm = ({ FileInput, card, updateCard, deleteCard }) => {
   const { name, company, theme, title, email, message, fileName } = card;
 
   const onSubmit = () => {
+    console.log(card);
     deleteCard(card)
   };
   const onChange = (event) => {
