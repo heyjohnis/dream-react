@@ -1,23 +1,32 @@
-import firebase from 'firebase';
-import firebaseApp from './firebase';
-
+import { firebaseAuth, githubProvider, googleProvider } from './firebase';
 
 class AuthService {
   login(providerName) {
-    const authProvider = new firebase.auth[`${providerName}AuthProvider`]();
-    console.log("authProvider", authProvider);
-    return firebaseApp.auth().signInWithPopup(authProvider);
+    const authProvider = this.getProvider(providerName);
+    return firebaseAuth.signInWithPopup(authProvider);
   }
 
   logout() {
-    firebase.auth().signOut();
+    firebaseAuth.auth().signOut();
   }
 
   onAuthChange(onUserChanged) {
-    firebaseApp.auth().onAuthStateChanged(user => {
+    firebaseAuth.onAuthStateChanged(user => {
       onUserChanged(user);
     });
   }
+
+  getProvider(providerName) {
+    switch(providerName) {
+      case 'Google': 
+        return googleProvider;
+      case 'Github':
+        return githubProvider;
+      default:
+        throw new Error(`${providerName} : 확인되지 않은 Provider`);
+    }
+  }
+
 }
 
 export default AuthService;
